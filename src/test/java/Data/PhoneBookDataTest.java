@@ -38,32 +38,7 @@ public class PhoneBookDataTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of getContactList method, of class PhoneBookData.
-     */
-    @Test
-    public void testGetContactList() {
-        System.out.println("getContactList");
-        PhoneBookData instance = new PhoneBookData();
-        ArrayList<PhoneBookItem> expResult = null;
-        ArrayList<PhoneBookItem> result = instance.getContactList();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setContactList method, of class PhoneBookData.
-     */
-    @Test
-    public void testSetContactList() {
-        System.out.println("setContactList");
-        ArrayList<PhoneBookItem> contactList = null;
-        PhoneBookData instance = new PhoneBookData();
-        instance.setContactList(contactList);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+    
 
     /**
      * Test of addPropertyChangeListener method, of class PhoneBookData.
