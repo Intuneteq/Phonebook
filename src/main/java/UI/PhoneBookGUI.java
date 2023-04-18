@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.mavenphonebook;
+package UI;
 
-import java.util.Observable;
-import java.util.Observer;
+import Data.PhoneBookData;
+import Data.PhoneBookItem;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Stiv
  */
-public class PhoneBookGUI extends javax.swing.JFrame implements Observer {
+public class PhoneBookGUI extends javax.swing.JFrame implements PropertyChangeListener {
 
     /**
      * Creates new form PhoneBookGUI
@@ -23,8 +25,8 @@ public class PhoneBookGUI extends javax.swing.JFrame implements Observer {
     PhoneBookData phonebookdata;
     public PhoneBookGUI() {
         initComponents();
-        phonebookdata = new PhoneBookData();
-        phonebookdata.addObserver(this);
+        this.phonebookdata = new Data.PhoneBookData();
+        phonebookdata.addPropertyChangeListener(this);
     }
 
     /**
@@ -212,17 +214,20 @@ public class PhoneBookGUI extends javax.swing.JFrame implements Observer {
     private javax.swing.JTextField txtContactNumber;
     // End of variables declaration//GEN-END:variables
 
+    
+
     @Override
-    public void update(Observable o, Object arg) {
-        final PhoneBookData pbr = (PhoneBookData) arg;
+    public void propertyChange(PropertyChangeEvent evt) {
+        final PhoneBookData pbr = (PhoneBookData) evt.getNewValue();
         int i=0;
         DefaultTableModel model =  (DefaultTableModel) tblPhoneBook.getModel();
         model.setRowCount(pbr.getSize());
-        for(PhoneBookItem pbi :pbr.contactList)
+        for(PhoneBookItem pbi :pbr.getContactList())
         {
             model.setValueAt(pbi.getContactName(), i, 0);
             model.setValueAt(pbi.getContactNumber(), i, 1);
             i++;
         }
+    
     }
 }
