@@ -53,7 +53,7 @@ public class PhoneBookData {
         if (!_contactNumber.matches("[0-9]+")) return false;
         PhoneBookItem pbi = new PhoneBookItem(_contactName, _contactNumber);
         getContactList().add(pbi);
-        pcl.propertyChange(new PropertyChangeEvent(this, "contactAdded", null, this));
+        if (pcl!=null) pcl.propertyChange(new PropertyChangeEvent(this, "contactAdded", null, this));
         return true;
     }
     
@@ -77,7 +77,7 @@ public class PhoneBookData {
         int at = findContactAt(_contactName,_contactNumber);
         if (at<0) return false;
         getContactList().remove(at);
-        pcl.propertyChange(new PropertyChangeEvent(this, "contactDeleted", null, this));
+        if (pcl!=null) pcl.propertyChange(new PropertyChangeEvent(this, "contactDeleted", null, this));
         return true;
         
     }
