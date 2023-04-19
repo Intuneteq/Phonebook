@@ -159,10 +159,18 @@ public class PhoneBookGUI extends javax.swing.JFrame implements PropertyChangeLi
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
+        try
+        {
         int row = tblPhoneBook.getSelectedRow();
         String contactname = (String) tblPhoneBook.getValueAt(row, 0);
         String contactnumber = (String) tblPhoneBook.getValueAt(row, 1);
         boolean retVal = phonebookdata.deleteContact(contactname, contactnumber);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "No contact selected", "Information", JOptionPane.INFORMATION_MESSAGE);
+    
+        }
         
         
         
