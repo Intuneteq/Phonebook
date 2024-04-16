@@ -6,12 +6,13 @@ package Data;
 
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -21,22 +22,24 @@ public class PhoneBookDataTest {
     
     public PhoneBookDataTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
+
+    @BeforeAll
+    public static void setUpClass() throws Exception {
+    }
+
+    @AfterAll
+    public static void tearDownClass() throws Exception {
+    }
+
+    @BeforeEach
+    public void setUp() throws Exception {
+    }
+
+    @AfterEach
+    public void tearDown() throws Exception {
     }
     
-    @AfterClass
-    public static void tearDownClass() {
-    }
     
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     
 
@@ -111,6 +114,33 @@ public class PhoneBookDataTest {
         boolean expResult = false;
         boolean result = instance.deleteContact(_contactName, _contactNumber);
         assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getContactList method, of class PhoneBookData.
+     */
+    @Test
+    public void testGetContactList() {
+        System.out.println("getContactList");
+        PhoneBookData instance = new PhoneBookData();
+        ArrayList<PhoneBookItem> expResult = null;
+        ArrayList<PhoneBookItem> result = instance.getContactList();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setContactList method, of class PhoneBookData.
+     */
+    @Test
+    public void testSetContactList() {
+        System.out.println("setContactList");
+        ArrayList<PhoneBookItem> contactList = null;
+        PhoneBookData instance = new PhoneBookData();
+        instance.setContactList(contactList);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

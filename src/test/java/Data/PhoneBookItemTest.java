@@ -4,12 +4,13 @@
  */
 package Data;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -19,22 +20,24 @@ public class PhoneBookItemTest {
     
     public PhoneBookItemTest() {
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
+
+    @BeforeAll
+    public static void setUpClass() throws Exception {
+    }
+
+    @AfterAll
+    public static void tearDownClass() throws Exception {
+    }
+
+    @BeforeEach
+    public void setUp() throws Exception {
+    }
+
+    @AfterEach
+    public void tearDown() throws Exception {
     }
     
-    @AfterClass
-    public static void tearDownClass() {
-    }
     
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of getContactName method, of class PhoneBookItem.
@@ -42,7 +45,7 @@ public class PhoneBookItemTest {
     @Test
     public void testGetContactName() {
         System.out.println("getContactName");
-        PhoneBookItem instance = null;
+        PhoneBookItem instance = new PhoneBookItem("","");
         String expResult = "";
         String result = instance.getContactName();
         assertEquals(expResult, result);
@@ -58,7 +61,7 @@ public class PhoneBookItemTest {
         System.out.println("equals");
         String _contactName = "";
         String _contactNumber = "";
-        PhoneBookItem instance = null;
+        PhoneBookItem instance = new PhoneBookItem("","");;
         boolean expResult = false;
         boolean result = instance.equals(_contactName, _contactNumber);
         assertEquals(expResult, result);
@@ -77,10 +80,36 @@ public class PhoneBookItemTest {
     @Test
     public void testGetContactNumber() {
         System.out.println("getContactNumber");
-        PhoneBookItem instance = null;
+        PhoneBookItem instance = new PhoneBookItem("","");;
         String expResult = "";
         String result = instance.getContactNumber();
         assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setContactName method, of class PhoneBookItem.
+     */
+    @Test
+    public void testSetContactName() {
+        System.out.println("setContactName");
+        String ContactName = "";
+        PhoneBookItem instance = new PhoneBookItem("","");;
+        instance.setContactName(ContactName);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setContactNumber method, of class PhoneBookItem.
+     */
+    @Test
+    public void testSetContactNumber() {
+        System.out.println("setContactNumber");
+        String ContactNumber = "";
+        PhoneBookItem instance = new PhoneBookItem("","");;
+        instance.setContactNumber(ContactNumber);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
