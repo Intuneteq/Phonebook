@@ -14,28 +14,28 @@ import java.util.ArrayList;
  *
  * @author Stiv
  */
-public class PhoneBookData {
+public class PhoneBkData {
 
     /**
      * @return the contactList
      */
-    public ArrayList<PhoneBookItem> getContactList() {
+    public ArrayList<PhoneBkItem> getContactList() {
         return contactList;
     }
 
     /**
      * @param contactList the contactList to set
      */
-    public void setContactList(ArrayList<PhoneBookItem> contactList) {
+    public void setContactList(ArrayList<PhoneBkItem> contactList) {
         this.contactList = contactList;
     }
     
-    private ArrayList<PhoneBookItem> contactList;
+    private ArrayList<PhoneBkItem> contactList;
     PropertyChangeListener pcl;
     
-    public PhoneBookData()
+    public PhoneBkData()
     {
-        contactList = new  ArrayList<PhoneBookItem>();
+        contactList = new  ArrayList<PhoneBkItem>();
     }
     
     public void addPropertyChangeListener(PropertyChangeListener outsidePcl)
@@ -51,7 +51,7 @@ public class PhoneBookData {
         if (_contactName.equals("")) return false;
         if (_contactNumber.length()<7) return false;
         if (!_contactNumber.matches("[0-9]+")) return false;
-        PhoneBookItem pbi = new PhoneBookItem(_contactName, _contactNumber);
+        PhoneBkItem pbi = new PhoneBkItem(_contactName, _contactNumber);
         getContactList().add(pbi);
         if (pcl!=null) pcl.propertyChange(new PropertyChangeEvent(this, "contactAdded", null, this));
         return true;

@@ -9,12 +9,12 @@ package Data;
  *
  * @author Stiv
  */
-public class PhoneBookItem {
+public class PhoneBkItem {
 
     /**
      * @return the ContactName
      */
-    PhoneBookItem(String _contactName, String _contactNumber)
+    PhoneBkItem(String _contactName, String _contactNumber)
     {
         setContactName(_contactName);
         setContactNumber(_contactNumber);

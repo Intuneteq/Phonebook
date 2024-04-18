@@ -16,9 +16,9 @@ import org.junit.jupiter.api.Test;
  *
  * @author steve
  */
-public class PhoneBookItemTest {
+public class PhoneBkItemTest {
     
-    public PhoneBookItemTest() {
+    public PhoneBkItemTest() {
     }
 
     @BeforeAll
@@ -45,7 +45,7 @@ public class PhoneBookItemTest {
     @Test
     public void testGetContactName() {
         System.out.println("getContactName");
-        PhoneBookItem instance = new PhoneBookItem("","");
+        PhoneBkItem instance = new PhoneBkItem("","");
         String expResult = "";
         String result = instance.getContactName();
         assertEquals(expResult, result);
@@ -61,7 +61,7 @@ public class PhoneBookItemTest {
         System.out.println("equals");
         String _contactName = "";
         String _contactNumber = "";
-        PhoneBookItem instance = new PhoneBookItem("","");;
+        PhoneBkItem instance = new PhoneBkItem("","");;
         boolean expResult = false;
         boolean result = instance.equals(_contactName, _contactNumber);
         assertEquals(expResult, result);
@@ -80,7 +80,7 @@ public class PhoneBookItemTest {
     @Test
     public void testGetContactNumber() {
         System.out.println("getContactNumber");
-        PhoneBookItem instance = new PhoneBookItem("","");;
+        PhoneBkItem instance = new PhoneBkItem("","");;
         String expResult = "";
         String result = instance.getContactNumber();
         assertEquals(expResult, result);
@@ -95,7 +95,7 @@ public class PhoneBookItemTest {
     public void testSetContactName() {
         System.out.println("setContactName");
         String ContactName = "";
-        PhoneBookItem instance = new PhoneBookItem("","");;
+        PhoneBkItem instance = new PhoneBkItem("","");;
         instance.setContactName(ContactName);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -108,7 +108,7 @@ public class PhoneBookItemTest {
     public void testSetContactNumber() {
         System.out.println("setContactNumber");
         String ContactNumber = "";
-        PhoneBookItem instance = new PhoneBookItem("","");;
+        PhoneBkItem instance = new PhoneBkItem("","");;
         instance.setContactNumber(ContactNumber);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

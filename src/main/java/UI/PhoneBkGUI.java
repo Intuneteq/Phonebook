@@ -5,8 +5,8 @@
  */
 package UI;
 
-import Data.PhoneBookData;
-import Data.PhoneBookItem;
+import Data.PhoneBkData;
+import Data.PhoneBkItem;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import javax.swing.JOptionPane;
@@ -16,16 +16,16 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Stiv
  */
-public class PhoneBookGUI extends javax.swing.JFrame implements PropertyChangeListener {
+public class PhoneBkGUI extends javax.swing.JFrame implements PropertyChangeListener {
 
     /**
      * Creates new form PhoneBookGUI
      */
     
-    PhoneBookData phonebookdata;
-    public PhoneBookGUI() {
+    PhoneBkData phonebookdata;
+    public PhoneBkGUI() {
         initComponents();
-        this.phonebookdata = new Data.PhoneBookData();
+        this.phonebookdata = new Data.PhoneBkData();
         phonebookdata.addPropertyChangeListener(this);
     }
 
@@ -199,20 +199,21 @@ public class PhoneBookGUI extends javax.swing.JFrame implements PropertyChangeLi
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PhoneBookGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhoneBkGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PhoneBookGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhoneBkGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PhoneBookGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhoneBkGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PhoneBookGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PhoneBkGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PhoneBookGUI().setVisible(true);
+                new PhoneBkGUI().setVisible(true);
             }
         });
     }
@@ -233,11 +234,11 @@ public class PhoneBookGUI extends javax.swing.JFrame implements PropertyChangeLi
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        final PhoneBookData pbr = (PhoneBookData) evt.getNewValue();
+        final PhoneBkData pbr = (PhoneBkData) evt.getNewValue();
         int i=0;
         DefaultTableModel model =  (DefaultTableModel) tblPhoneBook.getModel();
         model.setRowCount(pbr.getSize());
-        for(PhoneBookItem pbi :pbr.getContactList())
+        for(PhoneBkItem pbi :pbr.getContactList())
         {
             model.setValueAt(pbi.getContactName(), i, 0);
             model.setValueAt(pbi.getContactNumber(), i, 1);

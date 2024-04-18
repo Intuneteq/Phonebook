@@ -18,9 +18,9 @@ import org.junit.jupiter.api.Test;
  *
  * @author steve
  */
-public class PhoneBookDataTest {
+public class PhoneBkDataTest {
     
-    public PhoneBookDataTest() {
+    public PhoneBkDataTest() {
     }
 
     @BeforeAll
@@ -50,7 +50,7 @@ public class PhoneBookDataTest {
     public void testAddPropertyChangeListener() {
         System.out.println("addPropertyChangeListener");
         PropertyChangeListener outsidePcl = null;
-        PhoneBookData instance = new PhoneBookData();
+        PhoneBkData instance = new PhoneBkData();
         instance.addPropertyChangeListener(outsidePcl);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -64,7 +64,7 @@ public class PhoneBookDataTest {
         System.out.println("addContact");
         String _contactName = "";
         String _contactNumber = "";
-        PhoneBookData instance = new PhoneBookData();
+        PhoneBkData instance = new PhoneBkData();
         boolean expResult = false;
         boolean result = instance.addContact(_contactName, _contactNumber);
         assertEquals(expResult, result);
@@ -78,7 +78,7 @@ public class PhoneBookDataTest {
     @Test
     public void testGetSize() {
         System.out.println("getSize");
-        PhoneBookData instance = new PhoneBookData();
+        PhoneBkData instance = new PhoneBkData();
         int expResult = 0;
         int result = instance.getSize();
         assertEquals(expResult, result);
@@ -94,7 +94,7 @@ public class PhoneBookDataTest {
         System.out.println("findContactAt");
         String _contactName = "";
         String _contactNumber = "";
-        PhoneBookData instance = new PhoneBookData();
+        PhoneBkData instance = new PhoneBkData();
         int expResult = 0;
         int result = instance.findContactAt(_contactName, _contactNumber);
         assertEquals(expResult, result);
@@ -110,7 +110,7 @@ public class PhoneBookDataTest {
         System.out.println("deleteContact");
         String _contactName = "";
         String _contactNumber = "";
-        PhoneBookData instance = new PhoneBookData();
+        PhoneBkData instance = new PhoneBkData();
         boolean expResult = false;
         boolean result = instance.deleteContact(_contactName, _contactNumber);
         assertEquals(expResult, result);
@@ -124,9 +124,9 @@ public class PhoneBookDataTest {
     @Test
     public void testGetContactList() {
         System.out.println("getContactList");
-        PhoneBookData instance = new PhoneBookData();
-        ArrayList<PhoneBookItem> expResult = null;
-        ArrayList<PhoneBookItem> result = instance.getContactList();
+        PhoneBkData instance = new PhoneBkData();
+        ArrayList<PhoneBkItem> expResult = null;
+        ArrayList<PhoneBkItem> result = instance.getContactList();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -138,8 +138,8 @@ public class PhoneBookDataTest {
     @Test
     public void testSetContactList() {
         System.out.println("setContactList");
-        ArrayList<PhoneBookItem> contactList = null;
-        PhoneBookData instance = new PhoneBookData();
+        ArrayList<PhoneBkItem> contactList = null;
+        PhoneBkData instance = new PhoneBkData();
         instance.setContactList(contactList);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
