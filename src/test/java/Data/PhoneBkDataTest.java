@@ -169,7 +169,5 @@ public class PhoneBkDataTest {
 
         // assert list size is one
         assertEquals(1, instance.getSize());
-
     }
-
 }
