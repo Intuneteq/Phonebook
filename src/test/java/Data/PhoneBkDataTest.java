@@ -167,6 +167,9 @@ public class PhoneBkDataTest {
         // assert second name added
         assertFalse(isAddContact2);
 
+        // assert list size is one
+        assertEquals(1, instance.getSize());
+
     }
 
 }
