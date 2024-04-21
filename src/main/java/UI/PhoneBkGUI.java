@@ -21,12 +21,15 @@ public class PhoneBkGUI extends javax.swing.JFrame implements PropertyChangeList
     /**
      * Creates new form PhoneBookGUI
      */
-    
     PhoneBkData phonebookdata;
+
     public PhoneBkGUI() {
         initComponents();
         this.phonebookdata = new Data.PhoneBkData();
         phonebookdata.addPropertyChangeListener(this);
+
+        // set default record count on ui instantiation
+        recordsLabel.setText("0 records");
     }
 
     /**
@@ -47,6 +50,7 @@ public class PhoneBkGUI extends javax.swing.JFrame implements PropertyChangeList
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        recordsLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,24 +108,32 @@ public class PhoneBkGUI extends javax.swing.JFrame implements PropertyChangeList
 
         jLabel3.setText("(7 digits minimum)");
 
+        recordsLabel.setText("n records");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtContactName, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(recordsLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtContactName, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(17, 17, 17))
@@ -141,7 +153,9 @@ public class PhoneBkGUI extends javax.swing.JFrame implements PropertyChangeList
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(recordsLabel))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
@@ -155,31 +169,26 @@ public class PhoneBkGUI extends javax.swing.JFrame implements PropertyChangeList
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         boolean result = phonebookdata.addContact(txtContactName.getText(), txtContactNumber.getText());
-        if (result==false)
-        {
+        if (result == false) {
             JOptionPane.showMessageDialog(null, "Problem with Name or Number", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
-        try
-        {
-        int row = tblPhoneBook.getSelectedRow();
-        String contactname = (String) tblPhoneBook.getValueAt(row, 0);
-        String contactnumber = (String) tblPhoneBook.getValueAt(row, 1);
-        boolean retVal = phonebookdata.deleteContact(contactname, contactnumber);
-        }
-        catch (Exception e)
-        {
+
+        try {
+            int row = tblPhoneBook.getSelectedRow();
+            String contactname = (String) tblPhoneBook.getValueAt(row, 0);
+            String contactnumber = (String) tblPhoneBook.getValueAt(row, 1);
+            boolean retVal = phonebookdata.deleteContact(contactname, contactnumber);
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No contact selected", "Information", JOptionPane.INFORMATION_MESSAGE);
-    
+
         }
-        
-        
-        
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -225,25 +234,33 @@ public class PhoneBkGUI extends javax.swing.JFrame implements PropertyChangeList
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel recordsLabel;
     private javax.swing.JTable tblPhoneBook;
     private javax.swing.JTextField txtContactName;
     private javax.swing.JTextField txtContactNumber;
     // End of variables declaration//GEN-END:variables
 
-    
-
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         final PhoneBkData pbr = (PhoneBkData) evt.getNewValue();
-        int i=0;
-        DefaultTableModel model =  (DefaultTableModel) tblPhoneBook.getModel();
+
+        int i = 0;
+
+        DefaultTableModel model = (DefaultTableModel) tblPhoneBook.getModel();
+
         model.setRowCount(pbr.getSize());
-        for(PhoneBkItem pbi :pbr.getContactList())
-        {
+
+        for (PhoneBkItem pbi : pbr.getContactList()) {
             model.setValueAt(pbi.getContactName(), i, 0);
             model.setValueAt(pbi.getContactNumber(), i, 1);
             i++;
         }
-    
+
+        // Pluralize records unit appropriately.
+        String unit = pbr.getSize() > 1 ? "records" : "record";
+
+        // Update record count
+        recordsLabel.setText(pbr.getSize() + " " + unit);
+
     }
 }
