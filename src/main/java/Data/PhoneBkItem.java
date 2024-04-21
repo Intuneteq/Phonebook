@@ -11,23 +11,23 @@ package Data;
  */
 public class PhoneBkItem {
 
+    private String ContactName;
+    private String ContactNumber;
+
     /**
      * @return the ContactName
      */
-    PhoneBkItem(String _contactName, String _contactNumber)
-    {
-        setContactName(_contactName);
-        setContactNumber(_contactNumber);
+    PhoneBkItem(String _contactName, String _contactNumber) {
+        this.ContactName = _contactName;
+        this.ContactNumber = _contactNumber;
     }
-    
+
     public String getContactName() {
         return ContactName;
     }
-    
-    public boolean equals(String _contactName, String _contactNumber)
-    {
-        if (ContactName.equals(_contactName) && ContactNumber.equals(_contactNumber)) return true;
-        return false;
+
+    public boolean equals(String _contactName, String _contactNumber) {
+        return ContactName.equals(_contactName) && ContactNumber.equals(_contactNumber);
     }
 
     /**
@@ -50,8 +50,5 @@ public class PhoneBkItem {
     public void setContactNumber(String ContactNumber) {
         this.ContactNumber = ContactNumber;
     }
-    private String ContactName;
-    private String ContactNumber;
-    
-    
+
 }
