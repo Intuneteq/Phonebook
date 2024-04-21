@@ -1,4 +1,3 @@
-
 package Data;
 
 import java.beans.PropertyChangeEvent;
@@ -55,6 +54,11 @@ public class PhoneBkData {
             return false;
         }
 
+        // check for duplicate name and return false if found
+        if (findContactAt(_contactName) != -1) {
+            return false;
+        }
+
         PhoneBkItem pbi = new PhoneBkItem(_contactName, _contactNumber);
 
         getContactList().add(pbi);
@@ -73,6 +77,22 @@ public class PhoneBkData {
     public int findContactAt(String _contactName, String _contactNumber) {
         for (int i = 0; i < getContactList().size(); i++) {
             if (getContactList().get(i).equals(_contactName, _contactNumber)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    /**
+     * Find contact index by contact name
+     *
+     * @param _contactName contact's name
+     * @return contact index
+     */
+    public int findContactAt(String _contactName) {
+        for (int i = 0; i < getContactList().size(); i++) {
+            if (getContactList().get(i).getContactName().equals(_contactName)) {
                 return i;
             }
         }
