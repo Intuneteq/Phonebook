@@ -55,11 +55,16 @@ public class PhoneBkData {
             return false;
         }
 
+        if (_contactName.length() <7)
+        {
+            return false;
+        }
         if (_contactNumber.length() < 7) {
             return false;
         }
 
-        if (!_contactNumber.matches("[0-9]+")) {
+        //check if given phone number allows + sign
+        if (!_contactNumber.matches("^\\+?[0-9]{7,}$")) {            
             return false;
         }
 
