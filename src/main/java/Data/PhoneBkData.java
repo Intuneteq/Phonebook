@@ -13,6 +13,10 @@ public class PhoneBkData {
     private ArrayList<PhoneBkItem> contactList;
     public PropertyChangeListener pcl;
 
+    public PhoneBkData() {
+        contactList = new ArrayList<>();
+    }
+
     /**
      * @return the contactList
      */
@@ -27,12 +31,17 @@ public class PhoneBkData {
         this.contactList = contactList;
     }
 
-    public PhoneBkData() {
-        contactList = new ArrayList<>();
-    }
-
     public void addPropertyChangeListener(PropertyChangeListener outsidePcl) {
         pcl = outsidePcl;
+    }
+
+    /**
+     * Getter method for property change listener
+     *
+     * @return property change listener
+     */
+    public PropertyChangeListener getPropertyChangeListener() {
+        return this.pcl;
     }
 
     public boolean addContact(String _contactName, String _contactNumber) {
