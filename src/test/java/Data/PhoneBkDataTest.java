@@ -43,7 +43,7 @@ public class PhoneBkDataTest {
      * Test of addContact method, of class PhoneBookData.
      */
     @Test
-    public void testAddContact_nullContactName_nullContactNumber() {
+    public void DontAllowInvalidEntries_nullContactName_nullContactNumber() {
         System.out.println("addContactNullContactNumberNullContactName");
 
         String _contactName = null;
@@ -51,13 +51,16 @@ public class PhoneBkDataTest {
 
         PhoneBkData instance = new PhoneBkData();
 
+        boolean expectedResult = false;
+
         boolean result = instance.addContact(_contactName, _contactNumber);
 
         assertFalse(result);
+        assertEquals(expectedResult, result);
     }
 
     @Test
-    public void testAddContact_emptyContactName() {
+    public void DontAllowInvalidEntries_emptyContactName() {
         System.out.println("addContactEmptyContactName");
 
         String _contactName = "";
@@ -65,13 +68,16 @@ public class PhoneBkDataTest {
 
         PhoneBkData instance = new PhoneBkData();
 
+        boolean expectedResult = false;
+
         boolean result = instance.addContact(_contactName, _contactNumber);
 
         assertFalse(result);
+        assertEquals(expectedResult, result);
     }
 
     @Test
-    public void testAddContact_NumberLessThanSeven() {
+    public void DontAllowInvalidEntries_NumberLessThanSeven() {
         System.out.println("addContactNumberLessThanSeven");
 
         String _contactName = "Tester";
@@ -79,13 +85,16 @@ public class PhoneBkDataTest {
 
         PhoneBkData instance = new PhoneBkData();
 
+        boolean expectedResult = false;
+
         boolean result = instance.addContact(_contactName, _contactNumber);
 
         assertFalse(result);
+        assertEquals(expectedResult, result);
     }
 
     @Test
-    public void testAddContact_NumberDigits() {
+    public void DontAllowInvalidEntries_NumberDigits() {
         System.out.println("addContactNumberDigits");
 
         String _contactName1 = "Tester 1";
@@ -95,23 +104,35 @@ public class PhoneBkDataTest {
         String _contactNumber = "123456A";
         String _contactNumber2 = "-12344589";
         String _contactNumber3 = "12344589.";
+        String _contactNumber4 = "++12345678";
 
         PhoneBkData instance = new PhoneBkData();
+
+        boolean expectedResult = false;
 
         boolean result1 = instance.addContact(_contactName1, _contactNumber);
         boolean result2 = instance.addContact(_contactName2, _contactNumber2);
         boolean result3 = instance.addContact(_contactName3, _contactNumber3);
+        boolean result4 = instance.addContact(_contactName3, _contactNumber4);
 
         assertFalse(result1);
+        assertEquals(expectedResult, result1);
+
         assertFalse(result2);
+        assertEquals(expectedResult, result2);
+
         assertFalse(result3);
+        assertEquals(expectedResult, result3);
+
+        assertFalse(result4);
+        assertEquals(expectedResult, result4);
     }
 
     @Test
     public void testAddContact() {
         System.out.println("addContact");
 
-        String _contactName = "Tester";
+        String _contactName = "MyTester";
         String _contactNumber = "1234567";
 
         PhoneBkData instance = new PhoneBkData();
@@ -122,10 +143,27 @@ public class PhoneBkDataTest {
     }
 
     @Test
+    public void testAddContact_withInternationalNumber() {
+        System.out.println("addContact");
+
+        String _contactName = "MyTester";
+        String _contactNumber = "+1234567";
+
+        PhoneBkData instance = new PhoneBkData();
+
+        boolean expectedResult = true;
+
+        boolean result = instance.addContact(_contactName, _contactNumber);
+
+        assertTrue(result);
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
     public void DontAllowDuplicateNames() {
         System.out.println("DontAllowDuplicateNames");
 
-        String contactName = "Tester";
+        String contactName = "MyTester";
 
         PhoneBkData instance = new PhoneBkData();
 
@@ -162,7 +200,7 @@ public class PhoneBkDataTest {
         PhoneBkData instance = new PhoneBkData();
 
         // Add first item
-        boolean isAddContact1 = instance.addContact("Tester", contactNumber);
+        boolean isAddContact1 = instance.addContact("MyTester", contactNumber);
 
         // Assert first name added
         assertTrue(isAddContact1);
@@ -226,7 +264,7 @@ public class PhoneBkDataTest {
     public void testFindContactAt() {
         System.out.println("findContactAt");
 
-        String _contactName = "Tester";
+        String _contactName = "MyTester";
         String _contactNumber = "1234567";
 
         PhoneBkData instance = new PhoneBkData();
@@ -255,7 +293,7 @@ public class PhoneBkDataTest {
     public void testFindContactAt_1arg() {
         System.out.println("findContactAt1Arg");
 
-        String _contactName = "Tester";
+        String _contactName = "MyTester";
         String _contactNumber = "1234567";
 
         PhoneBkData instance = new PhoneBkData();
@@ -288,7 +326,7 @@ public class PhoneBkDataTest {
     public void testDeleteContact() {
         System.out.println("deleteContact");
 
-        String _contactName = "Tester";
+        String _contactName = "MyTester";
         String _contactNumber = "1234567";
 
         PhoneBkData instance = new PhoneBkData();
@@ -314,7 +352,7 @@ public class PhoneBkDataTest {
 
         assertEquals(0, result.size());
 
-        String _contactName = "Tester";
+        String _contactName = "MyTester";
         String _contactNumber = "1234567";
 
         instance.addContact(_contactName, _contactNumber);
