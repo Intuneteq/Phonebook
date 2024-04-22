@@ -68,6 +68,12 @@ public class PhoneBkData {
             return false;
         }
 
+        // check for duplicate number and return false if found
+        if (findContactAt(_contactNumber) != -1) {
+            return false;
+        }
+
+        // Check for duplicate number and return false if found
         PhoneBkItem pbi = new PhoneBkItem(_contactName, _contactNumber);
 
         getContactList().add(pbi);
@@ -94,14 +100,14 @@ public class PhoneBkData {
     }
 
     /**
-     * Find contact index by contact name
+     * Find contact index by contact name or contact number
      *
-     * @param _contactName contact's name
+     * @param _contactInfo contact's name pr number
      * @return contact index
      */
-    public int findContactAt(String _contactName) {
+    public int findContactAt(String _contactInfo) {
         for (int i = 0; i < getContactList().size(); i++) {
-            if (getContactList().get(i).getContactName().equals(_contactName)) {
+            if (getContactList().get(i).getContactName().equals(_contactInfo) || getContactList().get(i).getContactNumber().equals(_contactInfo)) {
                 return i;
             }
         }

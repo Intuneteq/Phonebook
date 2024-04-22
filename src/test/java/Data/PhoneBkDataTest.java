@@ -153,6 +153,38 @@ public class PhoneBkDataTest {
         assertEquals(1, instance.getSize());
     }
 
+    @Test
+    public void DontAllowDuplicateNumbers() {
+        System.out.println("DontAllowDuplicateNumbers");
+
+        String contactNumber = "1234567";
+
+        PhoneBkData instance = new PhoneBkData();
+
+        // Add first item
+        boolean isAddContact1 = instance.addContact("Tester", contactNumber);
+
+        // Assert first name added
+        assertTrue(isAddContact1);
+
+        ArrayList<PhoneBkItem> list = instance.getContactList();
+
+        // The first item should be isAddContact1
+        PhoneBkItem item1 = list.getFirst();
+
+        // Assert name is actually in the list
+        assertEquals(contactNumber, item1.getContactNumber());
+
+        // Attempt to add second contact item with same name
+        boolean isAddContact2 = instance.addContact("Tester 2", contactNumber);
+
+        // assert second name added
+        assertFalse(isAddContact2);
+
+        // assert list size is one
+        assertEquals(1, instance.getSize());
+    }
+
     /**
      * Test of getSize method, of class PhoneBookData.
      */
@@ -298,15 +330,15 @@ public class PhoneBkDataTest {
     @Test
     public void testSetContactList() {
         System.out.println("setContactList");
-        
+
         ArrayList<PhoneBkItem> expectReslt = new ArrayList();
-        
+
         PhoneBkData instance = new PhoneBkData();
-        
+
         instance.setContactList(expectReslt);
-        
+
         ArrayList<PhoneBkItem> result = instance.getContactList();
-        
+
         assertEquals(expectReslt, result);
     }
 }
