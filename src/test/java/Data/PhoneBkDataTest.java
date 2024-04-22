@@ -242,8 +242,8 @@ public class PhoneBkDataTest {
     public void testDeleteContact_ContactNotFound() {
         System.out.println("deleteContactNotFound");
 
-        String _contactName = "";
-        String _contactNumber = "";
+        String _contactName = "rana";
+        String _contactNumber = "1234567";
 
         PhoneBkData instance = new PhoneBkData();
 
