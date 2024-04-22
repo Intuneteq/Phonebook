@@ -1,0 +1,158 @@
+commit fd22345dc392eb0be820b8b2a7d393dfa648c681
+Author: Tobi Olanitori <to21abo@herts.ac.uk>
+Date:   Mon Apr 22 13:27:02 2024 +0100
+
+    test: test cases for invalid contact entries implemented
+
+commit 6458b4d4fbb431b3c6b684665bf2b10fa8dc3b5a
+Merge: d3a8be3 194610f
+Author: Rana Sumanth Annabathina <ra23abf@herts.ac.uk>
+Date:   Mon Apr 22 12:21:49 2024 +0000
+
+    Merged PR 3: added functionality to not allow users to enter not more than 7 characters
+    
+    added functionality to not allow users to enter not more than 7 characters
+
+commit 194610f0b260d26717b4e2b58e5a81c5342c04b6
+Author: Rana Sumanth Annabathina <ra23abf@herts.ac.uk>
+Date:   Mon Apr 22 13:19:27 2024 +0100
+
+    added functionality to not allow users to enter not more than 7 characters
+
+commit d3a8be3395b7efd97b68aa96ec7c137075256e32
+Author: Tobi Olanitori <to21abo@herts.ac.uk>
+Date:   Mon Apr 22 12:29:29 2024 +0100
+
+    feat: implemented feature to prevent duplicate numbers and wrote unit test for functionality
+
+commit 9b112c5914040efdf0005f86b474c520556efd8a
+Merge: 9ca8773 8f91f6a
+Author: Rana Sumanth Annabathina <ra23abf@herts.ac.uk>
+Date:   Mon Apr 22 05:21:41 2024 +0000
+
+    Merged PR 2: Updated a unit test case to test a negative scenario
+    
+    Updated a unit test case to test a negative scenario
+
+commit 8f91f6a831fc987cf6fe1dd79af9f7f196f4dbe8
+Author: Rana Sumanth Annabathina <ra23abf@herts.ac.uk>
+Date:   Mon Apr 22 06:20:30 2024 +0100
+
+    Updated a unit test case to test a negative scenario
+
+commit 9ca8773ccb036dbadf54c900f808549a2173f671
+Merge: 80a38b1 4c4b947
+Author: Rana Sumanth Annabathina <ra23abf@herts.ac.uk>
+Date:   Mon Apr 22 05:07:10 2024 +0000
+
+    Merged PR 1: Implemented tests for PhoneBkData class
+    
+    Implemented tests for PhoneBkData class
+
+commit 4c4b9476e3ad7fe9d7f3fb9b91b0a0ba14367f57
+Author: Rana Sumanth Annabathina <ra23abf@herts.ac.uk>
+Date:   Mon Apr 22 06:03:41 2024 +0100
+
+    Implemented tests for PhoneBkData class
+
+commit 80a38b13daf3f7881f78c8a2c026c80a17df1af4
+Author: Tobi Olanitori <to21abo@herts.ac.uk>
+Date:   Sun Apr 21 14:23:55 2024 +0100
+
+    test: unit tests for PhineBkItem done
+
+commit fd9e4faaf6e8c11e91b55bc56a4211d8c15a3379
+Author: Tobi Olanitori <to21abo@herts.ac.uk>
+Date:   Sun Apr 21 13:39:52 2024 +0100
+
+    test: unit test to duplicate add functionality 2
+
+commit 9635e8ee1187d979298b5b54020bac2bf8faf2c8
+Author: Tobi Olanitori <to21abo@herts.ac.uk>
+Date:   Sun Apr 21 13:37:28 2024 +0100
+
+    test: unit test to duplicate add functionality
+
+commit 6a39da98d53dde04e953ca83d016458ea9768252
+Author: Tobi Olanitori <to21abo@herts.ac.uk>
+Date:   Sun Apr 21 13:06:43 2024 +0100
+
+    feat: added functionality to prevent duplicate contact name entries
+
+commit d46aba6846d3eeeed4c0ab563e26973b1948519a
+Author: Tobi Olanitori <to21abo@herts.ac.uk>
+Date:   Sun Apr 21 13:01:49 2024 +0100
+
+    feat: added a label which shows the number of records and implemented it's functionality
+
+commit 0cf1b441b4f1e20037daf1a7ae4e04e0534d32a2
+Author: Tobi Olanitori <to21abo@herts.ac.uk>
+Date:   Sun Apr 21 12:53:11 2024 +0100
+
+    chore: code clean up for better readability
+
+commit 1ca466e3435ebc3fc2e3e5869bfacdf814058658
+Author: stiv bennett <s.j.bennett@herts.ac.uk>
+Date:   Thu Apr 18 13:53:40 2024 +0100
+
+    big rename
+
+commit 8c9f5ca7ccede9fba4421977cc4ad2e577b21f07
+Author: stiv bennett <s.j.bennett@herts.ac.uk>
+Date:   Tue Apr 16 16:15:53 2024 +0100
+
+    updated unit test framework and edited code
+
+commit 380627ddf777a3efed366fea42c4a7ff3cff4b0e
+Author: stivb <stivbennett@gmail.com>
+Date:   Wed Apr 19 10:32:09 2023 +0100
+
+    deletion problem solved
+
+commit a392d7c9b28714d75b81ff6566b08226ebd81109
+Author: stiv bennett <s.j.bennett@herts.ac.uk>
+Date:   Wed Apr 19 07:51:53 2023 +0100
+
+    checked if pcl is null or not before sending out notificatinos
+
+commit 5cc68c9e12567f0ca6ac6b28e07855b3d1215424
+Author: stiv bennett <s.j.bennett@herts.ac.uk>
+Date:   Tue Apr 18 09:51:42 2023 +0100
+
+    reduced number of tests
+
+commit e0a16dccc9715569af8634645916ddacbfb752d2
+Author: stiv bennett <s.j.bennett@herts.ac.uk>
+Date:   Tue Apr 18 09:43:39 2023 +0100
+
+    lots of changes
+
+commit 5f800d91ee62270d8d0c69274ef076f4fffdbd34
+Author: stivb <stivbennett@gmail.com>
+Date:   Tue Apr 21 07:27:27 2020 +0100
+
+    added extra to pom
+
+commit c1d49b0b34babc6aca466bdc3b888c9929730330
+Author: stivb <s.j.bennett@herts.ac.uk>
+Date:   Mon Apr 20 12:21:29 2020 +0100
+
+    master branch second commit
+
+commit 55c6c4b5e2ba55af45d1c6d15c72126aa26b32a4
+Author: stivb <s.j.bennett@herts.ac.uk>
+Date:   Mon Apr 20 10:57:21 2020 +0100
+
+    master branch second commit
+
+commit ae15a6338a45fd60e4b72d8259e2ad2f317d6991
+Author: stivb <s.j.bennett@herts.ac.uk>
+Date:   Thu Apr 2 17:20:19 2020 +0100
+
+    master branch second commit
+
+commit b63f9073ec8130d2a03fe4e4865dbf976a2c88f5
+Author: stivb <s.j.bennett@herts.ac.uk>
+Date:   Thu Apr 2 17:14:46 2020 +0100
+
+    master branch first commit
